@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akorfa's Website</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Welcome to Akorfa's Website</h1>
+  <p>This is a free website hosted without spending any money!</p>
+<script>
+  const navLinks = document.querySelector('.nav-links');
+  const toggleMenu = document.createElement('button');
+  toggleMenu.textContent = '☰';
+  toggleMenu.style.fontSize = '24px';
+  toggleMenu.style.background = 'none';
+  toggleMenu.style.border = 'none';
+  toggleMenu.style.cursor = 'pointer';
+
+  const header = document.querySelector('header .container');
+  header.insertBefore(toggleMenu, header.children[1]);
+
+  toggleMenu.addEventListener('click', () => {
+    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+  });
+
+  // Hide menu on small screens by default
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < 768) {
+      navLinks.style.display = 'none';
+    } else {
+      navLinks.style.display = 'flex';
+    }
+  });
+</script>
+</body>
+</html>
